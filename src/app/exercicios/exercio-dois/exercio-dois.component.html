@@ -1,0 +1,14 @@
+<div>
+  <h1>Exercício 2</h1>
+  <!-- aplicando mais de uma classe mediante condicional -->
+  <h2 [ngClass]="{
+    'maior-idade' : idade >= 18,
+    'menor-idade': idade < 18
+  }">{{ idade }}</h2>
+  <!-- class binding -->
+  <p [class.maior-idade]="idade >= 18">Idade atual: {{ idade }}</p>
+  <!-- * -> indica a diretiva estrutural, pois afeta a DOM -->
+  <p *ngIf="idade >= 18"><b>Maior de idade</b></p>
+  <button (click)="diminuir()">Diminuir idade</button>
+  <button (click)="aumentar()">Aumentar idade</button>
+</div>

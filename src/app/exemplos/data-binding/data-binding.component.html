@@ -1,0 +1,32 @@
+<section>
+  <h3>Interpolação</h3>
+  <hr/>
+  <p>Olá, me chamo {{ name }}</p>
+  <p>Olá, me chamo {{ name }} e tenho {{ idade }} anos</p>
+</section>
+<section>
+  <h3>Property Binding</h3>
+  <hr/>
+  <img [src]="link" alt="">
+</section>
+<section>
+  <h3>Event Binding</h3>
+  <hr/>
+  <button (click)="alerta()">Alert</button>
+</section>
+<section>
+  <h3>Two way Binding</h3>
+  <hr/>
+  <input type="text" [(ngModel)]="nomeCompleto"/>
+  <p>Nome completo: {{ nomeCompleto }}</p>
+  <h4>Exemplo:</h4>
+  <!-- usando o . para atribuir valores por meio de two way data binding -->
+  <input type="text" [(ngModel)]="estudante.nomeCompleto" />
+  <input type="text" [(ngModel)]="estudante.idade" />
+  <input type="text" [(ngModel)]="estudante.nota1" />
+  <input type="text" [(ngModel)]="estudante.nota2" />
+  <input type="text" [(ngModel)]="estudante.nota3" /><br/>
+  <!-- pipe , transforma a visualização da propriedade estudante: Student em json (visualmente objeto) -->
+  <span> Varivael estudante: Student </span>
+  <p>{{ estudante | json }}</p>
+</section>
