@@ -1,0 +1,39 @@
+<table>
+  <tr>
+    <th>id</th>
+    <th>nome</th>
+    <th>email</th>
+    <th>telefone</th>
+    <th>cep</th>
+    <th>cpf</th>
+    <th>Deletar</th>
+  </tr>
+  <tr *ngFor="let pac of pacientes">
+    <td> {{ pac._idPaciente }}</td>
+    <td>{{ pac.nomePaciente }}</td>
+    <td>{{ pac.emailPaciente }}</td>
+    <td>{{ pac.telefonePaciente }}</td>
+    <td>{{ pac.cepPaciente }}</td>
+    <td>{{ pac.cpfPaciente }}</td>
+    <td><button (click)="deletar(pac._idPaciente)">Do it</button></td>
+  </tr>
+</table>
+
+<section>
+  <h3>Adicione um novo paciente</h3>
+  <form>
+    <label for="nome">Nome</label><br/>
+    <input [(ngModel)]="newPaciente.nomePaciente" type="text" id="nome" name="nome"><br/>
+    <label for="email">Email</label><br/>
+    <input [(ngModel)]="newPaciente.emailPaciente" type="text" id="email" name="email"><br/>
+    <label for="telefone">Telefone</label><br/>
+    <input [(ngModel)]="newPaciente.telefonePaciente" type="text" id="telefone" name="telefone"><br/>
+    <label for="cep">CEP</label><br/>
+    <input [(ngModel)]="newPaciente.cepPaciente" type="text" id="cep" name="cep"><br/>
+    <label for="cpf">CPF</label><br/>
+    <input [(ngModel)]="newPaciente.cpfPaciente" type="text" id="cpf" name="cpf"><br/><br/>
+    <button (click)="adicionarPaciente()">Adicionar</button>
+  </form>
+</section>
+
+<p>{{ newPaciente | json }}</p>

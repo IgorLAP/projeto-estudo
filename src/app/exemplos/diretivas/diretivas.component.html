@@ -1,0 +1,32 @@
+<section>
+  <h3>*ngIf</h3>
+  <hr/>
+  <p *ngIf="!oculto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  <button (click)="ocultar()" [disabled]="oculto" >Ocultar</button>
+  <h3>*ngFor</h3>
+  <hr/>
+  <input type="text" (keyup.enter)="adicionar()" [(ngModel)]="alimento" placeholder="Digite um alimento">
+  <button (click)="adicionar()">Adicionar</button>
+  <ul>
+    <li *ngFor="let compra of compras, let i = index">
+      {{ i }} - {{ compra }}
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h3>*ngSwitch</h3>
+  <hr/>
+  <select [(ngModel)]="status">
+    <option value="loading">Loading</option>
+    <option value="error">Erro</option>
+    <option value="data">Dados</option>
+  </select>
+  <div [ngSwitch]="status">
+    <!-- aspas simples pois procura o match no status e não uma variavel loading no component -->
+    <p *ngSwitchCase="'loading'">Carregando...</p>
+    <p *ngSwitchCase="'error'">Erro</p>
+    <p *ngSwitchCase="'data'">Os dados chegaram!</p>
+    <p *ngSwitchDefault>Problema desconhecido!</p>
+  </div>
+</section>
