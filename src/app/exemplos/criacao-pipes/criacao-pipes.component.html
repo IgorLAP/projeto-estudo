@@ -1,0 +1,11 @@
+<input type="text" placeholder="Buscar linguagem" [(ngModel)]="query" />
+<!-- <p>{{ linguagens | filter: campoInput.value }}</p> -->
+
+<ul>
+  <li *ngFor="let lang of linguagens | filter: query">{{ lang }}</li>
+</ul>
+<hr/>
+<!-- reflete a adicão push por ser um pipe impuro, por padrão é puro -->
+<!-- com a atribuição através da desconstrução, mais um elemento ele muda a referência e reflete sem precisar torna-lo impuro [...this.numeros, 1] -->
+<h3 *ngFor="let num of numeros | inc ">{{ num }}</h3>
+<button (click)="add()">Adicionar</button>

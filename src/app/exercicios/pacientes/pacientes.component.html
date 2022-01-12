@@ -15,12 +15,13 @@
     <td>{{ pac.telefonePaciente }}</td>
     <td>{{ pac.cepPaciente }}</td>
     <td>{{ pac.cpfPaciente }}</td>
-    <td><button (click)="deletar(pac._idPaciente)">Do it</button></td>
+    <td><button class="delete" (click)="deletar(pac._idPaciente)">Do it</button></td>
   </tr>
 </table>
 
 <section>
   <h3>Adicione um novo paciente</h3>
+  <hr/>
   <form>
     <label for="nome">Nome</label><br/>
     <input [(ngModel)]="newPaciente.nomePaciente" type="text" id="nome" name="nome"><br/>
@@ -32,8 +33,6 @@
     <input [(ngModel)]="newPaciente.cepPaciente" type="text" id="cep" name="cep"><br/>
     <label for="cpf">CPF</label><br/>
     <input [(ngModel)]="newPaciente.cpfPaciente" type="text" id="cpf" name="cpf"><br/><br/>
-    <button (click)="adicionarPaciente()">Adicionar</button>
+    <button type="submit" (click)="adicionarPaciente()">Adicionar</button>
   </form>
 </section>
-
-<p>{{ newPaciente | json }}</p>
