@@ -1,0 +1,15 @@
+<input
+  type="text"
+  [(ngModel)]="username"
+  placeholder="Nome do usuario"
+  (keyup.enter)="getUserRepositories()"
+/> <br/>
+<button [disabled]="loading" (click)="getUserRepositories()">Buscar</button>
+
+<p *ngIf="loading">Carregando...</p>
+<p *ngIf="error">{{ msgUsuario }}</p>
+<div *ngFor="let repo of repositories" class="repo-card">
+  <h3>{{ repo.name }}</h3>
+  <p>{{ repo.owner.login }}</p>
+  <p>{{ repo.description }}</p>
+</div>

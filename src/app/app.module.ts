@@ -1,8 +1,10 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
 // import { ExemplosModule } from './exemplos/exemplos.module';
 // import { ExerciciosModule } from './exercicios/exercicios.module';
 
@@ -15,7 +17,9 @@ import { AppRoutingModule } from './app-routing.module';
     //seriam necessários se postos direto pelos componenets, com o lazy loading (roteamento) eles saem e entra a classe do routing
     // ExemplosModule,
     // ExerciciosModule
-    AppRoutingModule
+    AppRoutingModule,
+    //necessário para tipar requisições http, como o service está providIn root ele procura aqui para não dar erro
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
