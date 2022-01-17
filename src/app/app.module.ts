@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ExemplosModule } from './exemplos/exemplos.module';
 // import { ExerciciosModule } from './exercicios/exercicios.module';
@@ -19,7 +20,8 @@ import { AppComponent } from './app.component';
     // ExerciciosModule
     AppRoutingModule,
     //necessário para tipar requisições http, como o service está providIn root ele procura aqui para não dar erro
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

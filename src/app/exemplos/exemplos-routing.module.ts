@@ -3,6 +3,7 @@ import { Route, RouterModule } from '@angular/router';
 
 import { AppGithubComponent } from './app-github/app-github.component';
 import { AppSorteioComponent } from './app-sorteio/app-sorteio.component';
+import { CriacaoObservablesComponent } from './criacao-observables/criacao-observables.component';
 import { CriacaoPipesComponent } from './criacao-pipes/criacao-pipes.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DiretivasComponent } from './diretivas/diretivas.component';
@@ -35,7 +36,12 @@ const routes: Route[] = [
   {
     path: 'github',
     component: AppGithubComponent
+  },
+  {
+    path: 'criacao-obs',
+    component: CriacaoObservablesComponent
   }
+
 ];
 
 @NgModule({
